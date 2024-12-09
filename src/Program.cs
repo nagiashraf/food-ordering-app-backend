@@ -1,6 +1,7 @@
 using System.Text;
 using FoodOrderingApp.Auth;
 using FoodOrderingApp.Data;
+using FoodOrderingApp.Helpers;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -68,6 +69,8 @@ builder.Services.AddCors(options =>
             .WithOrigins("http://localhost:5173");
     });
 });
+
+builder.Services.Configure<CloudinarySettings>(config.GetSection(nameof(CloudinarySettings))); 
 
 builder.Services.AddHealthChecks();
 

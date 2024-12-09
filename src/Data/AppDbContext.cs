@@ -11,4 +11,6 @@ public class AppDbContext : DbContext
     }
 
     public DbSet<User> Users { get; init; }
+
+    public DbSet<Restaurant> Restaurants { get; init; }
 }
